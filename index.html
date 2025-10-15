@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Analiz Araç Kiti v1.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="ana-konteyner">
+        <header>
+            <div id="logo">GÜVENLİK ANALİZİ</div>
+            <div id="status-bar">Sistem Durumu: <span id="sistem-durumu">Hazır</span></div>
+        </header>
+
+        <div id="baslangic-ekrani" class="ekran aktif">
+            <h1>Sistem Güvenlik Kontrolü Başlat</h1>
+            <p>Sistem dosyalarınızı, çekirdek bütünlüğünü ve ağ güvenliğinizi kontrol etmek için butona tıklayın.</p>
+            <button onclick="baslatTamEkran()">TAM SİSTEM TARAMASINI BAŞLAT</button>
+        </div>
+
+        <div id="taramamodulu" class="ekran">
+            <div id="tarama-bilgi">
+                <div class="tarama-baslik">
+                    <h2>Gerçek Zamanlı Sistem Analizi</h2>
+                    <span id="gecen-sure">00:00</span>
+                </div>
+                
+                <div id="ilerleme-gosterge">
+                    <p id="tarama-faz">Başlatılıyor...</p>
+                    <div id="ilerleme-cubugu"><div class="ilerleme-içi"></div></div>
+                    <p id="tarama-mesaj"></p>
+                </div>
+                
+                <div id="sonuc-ozet">
+                    <h3>Tarama Özeti</h3>
+                    <p>Taranan Dosya Sayısı: <span id="dosya-sayisi">0</span></p>
+                    <p class="hata-sayac">Kritik Hata Sayısı: <span id="hata-sayisi">0</span></p>
+                </div>
+            </div>
+
+            <div id="hata-kutusu" class="gizli">
+                <div class="kilit-simge">!!!</div>
+                <h3>KRİTİK GÜVENLİK İHLALİ! (0x000000F7)</h3>
+                <p>Sistem çekirdek dosyalarında geri döndürülemez hatalar tespit edildi. Tüm verileriniz risk altında.</p>
+                <button onclick="kapatVeSifirla()">KRİZ YÖNETİMİNİ BAŞLAT (Zorla Kapat)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
